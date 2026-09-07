@@ -20,15 +20,15 @@ function Kettlebell() {
 
   return (
     <Float speed={1.6} rotationIntensity={0.15} floatIntensity={0.9}>
-      <group ref={group} scale={1.15}>
+      <group ref={group} scale={0.92} position={[0, -0.1, 0]}>
         {/* bell */}
-        <mesh castShadow position={[0, -0.35, 0]}>
-          <sphereGeometry args={[1, 64, 64]} />
+        <mesh castShadow position={[0, -0.5, 0]} scale={[1, 0.92, 1]}>
+          <sphereGeometry args={[0.95, 64, 64]} />
           <meshStandardMaterial color="#15181d" roughness={0.42} metalness={0.75} />
         </mesh>
         {/* neon ring */}
-        <mesh position={[0, -0.35, 0.92]} rotation={[0, 0, 0]}>
-          <torusGeometry args={[0.42, 0.045, 24, 96]} />
+        <mesh position={[0, -0.5, 0.84]}>
+          <torusGeometry args={[0.4, 0.045, 24, 96]} />
           <meshStandardMaterial
             color="#67ff8f"
             emissive="#3dff7a"
@@ -37,16 +37,16 @@ function Kettlebell() {
           />
         </mesh>
         {/* handle */}
-        <mesh castShadow position={[0, 0.72, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[0.62, 0.14, 24, 96, Math.PI]} />
+        <mesh castShadow position={[0, 0.42, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[0.52, 0.11, 24, 96, Math.PI]} />
           <meshStandardMaterial color="#1b1f26" roughness={0.35} metalness={0.85} />
         </mesh>
-        <mesh position={[-0.62, 0.36, 0]}>
-          <cylinderGeometry args={[0.14, 0.16, 0.8, 32]} />
+        <mesh castShadow position={[-0.52, 0.08, 0]} rotation={[0, 0, 0.16]}>
+          <cylinderGeometry args={[0.11, 0.14, 0.72, 32]} />
           <meshStandardMaterial color="#1b1f26" roughness={0.35} metalness={0.85} />
         </mesh>
-        <mesh position={[0.62, 0.36, 0]}>
-          <cylinderGeometry args={[0.14, 0.16, 0.8, 32]} />
+        <mesh castShadow position={[0.52, 0.08, 0]} rotation={[0, 0, -0.16]}>
+          <cylinderGeometry args={[0.11, 0.14, 0.72, 32]} />
           <meshStandardMaterial color="#1b1f26" roughness={0.35} metalness={0.85} />
         </mesh>
       </group>
